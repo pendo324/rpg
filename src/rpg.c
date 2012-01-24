@@ -6,8 +6,8 @@
 #include <fcntl.h>
 #include <curses.h>
 
-#define VIEW_WIDTH 24
-#define VIEW_HEIGHT 24
+#define VIEW_WIDTH 21
+#define VIEW_HEIGHT 21
 
 #define MAP_WIDTH 64
 #define MAP_HEIGHT 64
