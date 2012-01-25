@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <curses.h>
+#include "rpg.h"
+#include "wad.h"
 
 /*
 ============================================================================
