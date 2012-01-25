@@ -9,8 +9,9 @@ UNAME=$(shell uname)
 
 all: rpg
 
-OBJS=				\
-		bin/$(UNAME)/rpg.o
+OBJS=					\
+		bin/$(UNAME)/rpg.o	\
+		bin/$(UNAME)/wad.o
 
 rpg:	$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) \
