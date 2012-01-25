@@ -1,23 +1,24 @@
 #
-# Makefile for Otto's rougelike
+# Makefile for Pyr0byt3's rougelike
 #
 
 CC=gcc
 CFLAGS=-Wall -m32
 LIBS=-lcurses
+UNAME=$(shell uname)
 
 all: rpg
 
 OBJS=				\
-		bin/rpg.o
+		bin/$(UNAME)/rpg.o
 
 rpg:	$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) \
-	-o bin/rpg $(LIBS)
+	-o bin/$(UNAME)/rpg $(LIBS)
 
-bin/%.o:	src/%.c
+bin/$(UNAME)/%.o:	src/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf bin/*.o
-	rm -rf bin/rpg
+	rm -rf bin/$(UNAME)/*.o
+	rm -rf bin/$(UNAME)/rpg
