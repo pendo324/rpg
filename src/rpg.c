@@ -298,10 +298,10 @@ void getInput(void)
 
 void updateStatusBar(void)
 {
-	char statbar[VIEW_WIDTH];
+	char statbar[80];
 	char directs[5] = { 0, 'U', 'D', 'L', 'R' };
 
-	sprintf(statbar, "Health: %d, Level: %d, Direct: %d",player.actor.health, currentMap, directs[player.direct]);
+	sprintf(statbar, "H: %d, L: %d, D: %d",player.actor.health, currentMap, directs[player.direct]);
 	mvprintw(VIEW_HEIGHT+1,0,statbar);
 }
 
