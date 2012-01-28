@@ -260,18 +260,22 @@ void getInput(void)
 		case 'w':
 			player.actor.deltaX = 0;
 			player.actor.deltaY = -1;
+			player.direct = 1;
 			break;
 		case 's':
 			player.actor.deltaX = 0;
 			player.actor.deltaY = 1;
+			player.direct = 2;
 			break;
 		case 'a':
 			player.actor.deltaX = -1;
 			player.actor.deltaY = 0;
+			player.direct = 3;
 			break;
 		case 'd':
 			player.actor.deltaX = 1;
 			player.actor.deltaY = 0;
+			player.direct = 4;
 			break;
 		case 'q':
 			endwin();
@@ -295,8 +299,9 @@ void getInput(void)
 void updateStatusBar(void)
 {
 	char statbar[VIEW_WIDTH];
+	char directs[5] = { 0, 'U', 'D', 'L', 'R' };
 
-	sprintf(statbar, "Health: %d, Level %d",player.actor.health, currentMap);
+	sprintf(statbar, "Health: %d, Level: %d, Direct: %d",player.actor.health, currentMap, directs[player.direct]);
 	mvprintw(VIEW_HEIGHT+1,0,statbar);
 }
 
@@ -323,6 +328,7 @@ int main(void)
 		mapOn = currentMap;
 		player.actor.health = 100;
 		player.actor.glyph = '@';
+		player.direct = 1;
 		while (1) {
 			mapSpecials();
 			

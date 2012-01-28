@@ -36,6 +36,7 @@ typedef struct {
 
 typedef struct {
 	entity	actor;
+	int	directory;
 } player_t;
 
 short LittleShort (short l);
